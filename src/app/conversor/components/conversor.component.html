@@ -39,7 +39,7 @@
 			<option
 				*ngFor="let moeda of moedas"
 				[value]="moeda.sigla">
-				{{ moeda.sigla}} - {{ moeda.descricao }}
+				{{ moeda.sigla }} - {{ moeda.descricao }}
 			</option>
 		</select>
 		<input 
@@ -52,4 +52,10 @@
 			[disabled]="!conversaoForm.form.valid">
 	  </form>
 	 </div>
+	 <modal-cotacao
+     [id]="'modalCotacao'"
+     [conversaoResponse]="conversaoResponse"
+     [conversao]="conversao"
+     (onConfirm)="init()">
+ </modal-cotacao>
 </div>
